@@ -23,11 +23,13 @@ jobs:
          path: output.txt # or path/to/artifact
     - name: semgrep-scan  
       run : |
-            cd $GITHUB_WORKSPACE
+            cd $GITHUB_WORKSPACE 
+            ls
+            pwd
             python3 -m pip install semgrep
-            semgrep --config "p/python" --json -o semgrep.json
+            semgrep --config "p/nodejsscan" --json -o semgrep.json
     - uses: actions/upload-artifact@v3
       if: always()
       with:
-         name: semgrep-artifact
-         path: Tiredful-API/semgrep.json # or path/to/artifact
+         name: my-artifact
+         path: semgrep.json # or path/to/artifact
