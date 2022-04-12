@@ -29,5 +29,5 @@ jobs:
     - uses: actions/upload-artifact@v3
       if: always()
       with:
-         name: my-artifact
-         path: semgrep.json # or path/to/artifact
+         name: semgrep-artifact
+         path: $GITHUB_WORKSPACE/Tiredful-API/semgrep.json # or path/to/artifact
